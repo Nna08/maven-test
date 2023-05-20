@@ -14,7 +14,7 @@ pipeline {
                 git branch: 'main', url: 'https://github.com/clacla8/maven-test.git'
             }
         }
-        stage(sonarqube scan) {
+        stage("sonarqube scan") {
           steps {
             withSonarQubeEnv('sonar') {
               sh 'mvn verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=clacla8_geolocation2
